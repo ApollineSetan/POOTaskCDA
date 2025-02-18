@@ -13,16 +13,16 @@ class ViewAccount implements InterfaceView {
 
     //METHOD
     public function displayView(): string {
-        ob_start(); // Correctement démarrer la capture de tampon
-        echo $this->getForm(); // Affiche le formulaire
+        ob_start();
+        echo $this->getForm();
 ?>
         <section>
             <h1>Liste d'Utilisateurs</h1>
             <ul>
-                <?php echo $this->getListUsers(); // Corrigé pour afficher la liste des utilisateurs ?>
+                <?php echo $this->getListUsers(); ?>
             </ul>
         </section>
 <?php
-        return ob_get_clean(); // Retourner le contenu tamponné
+        return ob_get_clean();
     }
 }
