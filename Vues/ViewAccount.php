@@ -1,17 +1,17 @@
 <?php
 class ViewAccount implements InterfaceView {
-    //ATTRIBUTS
+    // Attributs
     private ?string $form = '';
     private ?string $listUsers = '';
 
-    //GETTER ET SETTER
+    // Getter et Setter
     public function getForm(): ?string { return $this->form; }
     public function setForm(?string $form): self { $this->form = $form; return $this; }
 
     public function getListUsers(): ?string { return $this->listUsers; }
     public function setListUsers(?string $listUsers): self { $this->listUsers = $listUsers; return $this; }
 
-    //METHOD
+    // Méthodes
     public function displayView(): string {
         ob_start();
         echo $this->getForm();

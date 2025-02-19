@@ -1,13 +1,13 @@
 <?php
 class ViewHeader implements interfaceView{
-    //ATTRIBUT
+    // Attributs
     private ?string $nav = '';
 
-    //GETTER ET SETTER
+    // Getter et Setter
     public function getNav(): ?string { return $this->nav; }
     public function setNav(?string $nav): self { $this->nav = $nav; return $this; }
 
-    //METHOD
+    // Méthodes
     public function displayView():string{
         ob_start();
 ?>
@@ -20,7 +20,7 @@ class ViewHeader implements interfaceView{
         <body>
             <header>
                 <nav>
-                    <a href="/">Accueil</a>
+                    <a href="/taskPOO/">Accueil</a>
                     <?php echo $this->getNav() ?>
                 </nav>
                 

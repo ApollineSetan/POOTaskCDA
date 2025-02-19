@@ -1,5 +1,6 @@
 <?php
 class ViewFooter implements interfaceView{
+    // Méthodes
     public function displayView():string{
         ob_start();
 ?>
