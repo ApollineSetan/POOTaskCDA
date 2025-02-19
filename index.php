@@ -10,6 +10,7 @@ include './AbstractClasses/AbstractModel.php';
 include './Controller/AccountController.php';
 include './Controller/MyAccountController.php';
 include './Controller/DecoController.php';
+include './Controller/ErrorController.php';
 include './Model/ModelAccount.php';
 include './Utils/MySQLBDD.php';
 include './Utils/utils.php';
@@ -17,6 +18,7 @@ include './Vues/ViewHeader.php';
 include './Vues/ViewFooter.php';
 include './Vues/ViewAccount.php';
 include './Vues/ViewMyAccount.php';
+include './Vues/ViewError.php';
 
 // Parse l'URL entrée
 $url = parse_url($_SERVER['REQUEST_URI']);
@@ -37,5 +39,10 @@ switch($path){
     case '/taskPOO/deconnexion' :
         $deconnexion = new DecoController(null,null);
         $deconnexion->deconnexion();
+        break;
+
+    default :
+        $error = new ErrorController(new ViewError());
+        $error->render();
         break;
 }
